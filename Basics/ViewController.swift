@@ -19,9 +19,12 @@ class ViewController: UIViewController {
         findMaxNumberFromArray()
         findMinNumberFromArray()
         findArmStrongNumber(number: 153)
+        oddEventNumber(number: 10)
+        findPrimeNumber(number: 30)
     }
 }
 
+//MARK: Fibonaci series
 func findFibonaciSeries(n: Int){
     //Fibonaci - //0,1,1,3,5,8,13,21,34
     var n3 = Int()
@@ -37,7 +40,7 @@ func findFibonaciSeries(n: Int){
     }
 }
 
-
+//MARK: Palindrome
 func checkPalindromeOrNot(name: String)
 {
     //Palindrome - ORATARO = ORATARO
@@ -51,7 +54,7 @@ func checkPalindromeOrNot(name: String)
     }
 }
 
-
+//MARK: Max Number
 func findMaxNumberFromArray()
 {
     //Max Number
@@ -60,7 +63,7 @@ func findMaxNumberFromArray()
     print(maxNum!)
 }
 
-
+//MARK: Min Number
 func findMinNumberFromArray()
 {
     //Min Number
@@ -69,6 +72,7 @@ func findMinNumberFromArray()
     print(minNum!)
 }
 
+//MARK: Armstrong Number
 func findArmStrongNumber(number: Int)
 {
     //Armstrong
@@ -95,3 +99,25 @@ func findArmStrongNumber(number: Int)
     
 }
 
+//MARK: OddEvenNumber
+func oddEventNumber(number: Int)
+{
+    for i in 0..<number
+    {
+        if (i % 2 == 0){
+            print("Even = \(i)")
+        }else{
+            print("Odd = \(i)")
+        }
+    }
+}
+
+//MARK: PrimeNumber
+func findPrimeNumber(number: Int)
+{
+    let upperLimit = Int(Double(number).squareRoot())
+    let isPrime = !(2...upperLimit).contains(where: {
+        number % $0 == 0
+    })
+    print(isPrime)
+}
